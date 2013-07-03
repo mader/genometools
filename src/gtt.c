@@ -107,6 +107,7 @@
 #include "tools/gt_extractseq.h"
 #include "tools/gt_featureindex.h"
 #include "tools/gt_fingerprint.h"
+#include "tools/gt_fishoracle.h"
 #include "tools/gt_genomediff.h"
 #include "tools/gt_gff3.h"
 #include "tools/gt_gff3_to_gtf.h"
@@ -206,6 +207,7 @@ GtToolbox* gtt_tools(void)
   gt_toolbox_add_tool(tools, "extractfeat", gt_extractfeat());
   gt_toolbox_add_tool(tools, "extractseq", gt_extractseq());
   gt_toolbox_add_tool(tools, "fingerprint", gt_fingerprint());
+  gt_toolbox_add_tool(tools, "fishoracle", gt_fishoracle());
   gt_toolbox_add_tool(tools, "genomediff", gt_genomediff());
   gt_toolbox_add_tool(tools, "gff3", gt_gff3());
   gt_toolbox_add_tool(tools, "gff3_to_gtf", gt_gff3_to_gtf());

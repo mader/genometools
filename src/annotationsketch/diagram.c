@@ -870,6 +870,14 @@ GtDiagram* gt_diagram_new_from_array(GtArray *features, const GtRange *range,
   return gt_diagram_new_generic(features, range, style, true);
 }
 
+GtDiagram* gt_diagram_new_from_feature_collection(GtFeatureCollection *features,
+                                                   const GtRange *range,
+                                                   GtStyle *style)
+{
+  GtArray *fc_array = gt_feature_collection_to_array(features);
+  return gt_diagram_new_from_array(fc_array, range, style);
+}
+
 GtRange gt_diagram_get_range(const GtDiagram *diagram)
 {
   GtRange rng;

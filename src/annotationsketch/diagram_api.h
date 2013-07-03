@@ -29,6 +29,7 @@
 typedef struct GtDiagram GtDiagram;
 
 #include "annotationsketch/custom_track_api.h"
+#include "annotationsketch/feature_collection_api.h"
 #include "extended/feature_index_api.h"
 #include "annotationsketch/style_api.h"
 #include "annotationsketch/block_api.h"
@@ -51,6 +52,13 @@ GtDiagram* gt_diagram_new(GtFeatureIndex *feature_index, const char *seqid,
    layout process.*/
 GtDiagram* gt_diagram_new_from_array(GtArray *features, const GtRange *range,
                                      GtStyle *style);
+/* Create a new <GtDiagram> object representing the feature nodes in
+   <features>. The features must overlap with <range>. The <GtStyle>
+   object <style> will be used to determine collapsing options during the
+   layout process.*/
+GtDiagram* gt_diagram_new_from_feature_collection(GtFeatureCollection *features,
+                                                   const GtRange *range,
+                                                   GtStyle *style);
 /* Returns the sequence position range represented by the <diagram>. */
 GtRange    gt_diagram_get_range(const GtDiagram *diagram);
 /* Assigns a GtTrackSelectorFunc to use to assign blocks to tracks.
