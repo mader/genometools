@@ -868,14 +868,16 @@ int fetch_features(GtFeatureIndexFo *fi,
     char *fname;
     
     if(fi->feature_type == GENERIC){
-      newgn = gt_feature_node_new(seq_id, track_id, start, end, strand);
-	  newfn = gt_feature_node_cast(newgn);
 	  
 	  if(strcmp(gt_str_get(feature_name),"") == 0){
         fname = gt_str_get(study_name);
       } else {
         fname = gt_str_get(feature_name);
+        strand = GT_STRAND_UNKNOWN;
       }
+	  
+      newgn = gt_feature_node_new(seq_id, track_id, start, end, strand);
+	  newfn = gt_feature_node_cast(newgn);
 	  
 	  gt_feature_node_set_attribute(newfn, STUDY_ID, s_id);
 	  gt_feature_node_set_attribute(newfn, ID, gt_str_get(feature_id));
