@@ -17,6 +17,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <locale.h>
 #include "core/assert_api.h"
 #include "extended/anno_db_fo_api.h"
 #include "extended/anno_db_prepared_stmt.h"
@@ -992,6 +993,7 @@ int gt_feature_index_fo_get_features(GtFeatureIndexFo *fi,
                                      GtArray *results,
                                      GtError *err)
 {
+  setlocale (LC_ALL, "POSIX");
   int had_err = 0;
   bool first = true;
 
