@@ -820,7 +820,6 @@ int fetch_features(GtFeatureIndexFo *fi,
   int had_err = 0;
   GtGenomeNode *newgn;
   GtFeatureNode *newfn;
-  int strand = GT_STRAND_BOTH;
   GtHashmap *track_nodes = NULL;
   GtGenomeNode* value;
 
@@ -831,6 +830,7 @@ int fetch_features(GtFeatureIndexFo *fi,
   while (!had_err && gt_rdb_stmt_exec(stmt, err) == 0) {
 	
 	unsigned long id = 0;
+	int strand = GT_STRAND_BOTH;
 	GtStr *seq_id = gt_str_new();
     unsigned long start = 0;
     unsigned long end = 0;
